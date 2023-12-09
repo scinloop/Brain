@@ -1,0 +1,29 @@
+
+.backgroundof-dataset {
+    display:auto;
+    background-color:rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.datamain {
+    text-align: center;
+    width: 100%;
+    height:900px;
+}
+
+.buttondata{
+    width:60px;
+    height:30px;
+    background-color: #708AE2;
+    color:white; 
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.buttondata:hover{
+    background-color: #13d162;
+
+}
