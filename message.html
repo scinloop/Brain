@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain</title>
+    <link rel="shortcut icon" href="/head.ico" />
+    <link rel="stylesheet" href="css/common.css" />
+  </head>
+  <script src="./js/script.js"></script>
+
+  <body>
+    <!-- 头部模块 -->
+    <section class="header wrapper">
+      <div class="fl logo">
+        <h1>
+          <a href="dashboard.html">软件标题名字</a>
+        </h1>
+      </div>
+      <div class="nav">
+        <div>
+          <ul>
+            <li>
+              <a href="dashboard.html">
+                <img src="./images/dashboard.png" />
+                <ul class="fr">
+                  Dashboard
+                </ul>
+              </a>
+            </li>
+            <li>
+              <a href="patient.html">
+                <img src="./images/patients.png" />
+                <ul class="fr">
+                  Patient
+                </ul>
+              </a>
+            </li>
+            <li>
+              <a href="message.html">
+                <img src="./images/message.png" />
+                <ul class="fr">
+                  Message
+                </ul>
+              </a>
+            </li>
+            <li>
+              <a href="dataset.html">
+                <img src="./images/message.png" />
+                <ul class="fr">
+                  DataSet
+                </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="photo">
+          <a href="dashboard.html">
+            <h1>photo</h1>
+          </a>
+        </div>
+        <div class="name">
+          <h1 class="nameh"><a href="dashboard.html">Doctor Li</a></h1>
+        </div>
+        <div class="department" alt="">
+          <a href="dashboard.html">Head of department</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <span>>></span>
+        <div class="dropdown-content">
+          <a href="dashboard.html">个人资料</a>
+          <a href="dashboard.html">个人空间</a>
+          <a href="dashboard.html">修改密码</a>
+          <a href="dashboard.html">退出</a>
+        </div>
+      </div>
+    </section>
+
+    <!--- Sidemenu -->
+    <!-- Left Menu Start -->
+    <div class="container">
+      <div class="mainframe-wrapper"></div>
+      <!--post activity-->
+      <div class="card_message">
+        <div class="card_title">
+          <h1>Post activities</h1>
+        </div>
+        <div class="card-post">
+          <select name="Patient" id="Patient">
+            <option value="patient">Select Patient</option>
+            <option value="patient1">张三</option>
+            <option value="patient2">李四</option>
+            <option value="patient3">王五</option>
+          </select>
+          <section>
+            <textarea id="post-title" type="text" placeholder="Title"></textarea
+            ><br />
+            <textarea
+              rows="10"
+              id="post-content"
+              placeholder="Details"
+            ></textarea
+            ><br />
+            <button class="submitButton" type="button" id="addButton">
+              Submit
+            </button>
+          </section>
+          <br />
+
+          <!--end of posting activity-->
+          <div class="card_title">
+            <!--past post content-->
+            <h2>Past post content</h2>
+            <hr />
+            <table class="pure-table pure-table-horizontal">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <!--end of past post content-->
+        </div>
+      </div>
+      <br />
+    </div>
+  </body>
+</html>

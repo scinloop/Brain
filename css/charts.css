@@ -1,0 +1,53 @@
+.plan_box {
+    overflow: hidden;
+  }
+  .plan_box table {
+    border-spacing: 0;
+  }
+  .plan_box table thead tr:nth-child(2n+1) {
+    background-color: #FAFAFA;
+  }
+  .plan_box table tr {
+    height: 40px;
+    font-size: 20px;
+    color: #666666;
+    line-height: 30px;
+    font-weight: 400;
+  }
+  .plan_box table tr:nth-child(2n) {
+    background-color: #FAFAFA;
+  }
+  .plan_box table .head {
+    font-size: 14px;
+    color: #666666;
+    line-height: 20px;
+    font-weight: 600;
+  }
+  /*# sourceMappingURL=index.css.map */
+.deletebutton:hover{
+  background-color: white !important;
+  color:black!important;
+  cursor: pointer;
+
+}
+.page-nav{
+  height: 60px;
+  width:100%;
+  line-height: 60px;
+  text-align: center;
+  overflow: hidden;			
+}
+.page-nav>ul{
+  overflow: hidden;
+  width:80%;
+  margin-left: 40%;
+}
+.page-nav>ul>li{
+  float: left;
+  list-style-type: none;
+  margin-right:20px;
+}
+
+tr td {
+  text-align: center;
+}

@@ -1,0 +1,237 @@
+<!-- 本地 -->
+<!-- <link rel="stylesheet" href="css/element-ui.css" />
+    <script src="./js/vue.js"></script>
+    <script src="./js/element-ui.js"></script> -->
+
+<!-- 网络 -->
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="./js/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brain</title>
+  <link rel="shortcut icon" href="/head.ico" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/charts.css" />
+
+  <script src="./js/script.js"></script>
+
+</head>
+<style>
+  #app {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+</style>
+
+<body>
+
+  <!-- 头部模块 -->
+  <section class="header wrapper">
+    <div class="fl logo">
+      <h1>
+        <a href="dashboard.html">软件标题名字</a>
+      </h1>
+    </div>
+    <div class="nav">
+      <div>
+        <ul>
+          <li>
+            <a href="dashboard.html">
+              <img src="./images/dashboard.png" />
+              <ul class="fr">
+                Dashboard
+              </ul>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="dashboard.html" class="dashboard-link">
+              <img src="./images/dashboard.png" />
+              <ul class="fr">
+                Method Selection
+              </ul>
+            </a>
+          </li> -->
+          <li>
+            <a href="patient.html">
+              <img src="./images/patients.png" />
+              <ul class="fr">
+                Patient
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="message.html">
+              <img src="./images/message.png" />
+              <ul class="fr">
+                Message
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="dataset.html">
+              <img src="./images/message.png">
+              <ul class="fr">DataSet</ul>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="photo">
+        <a href="dashboard.html">
+          <h1>photo</h1>
+        </a>
+      </div>
+      <div class="name">
+        <h1 class="nameh"><a href="dashboard.html">Doctor Li</a></h1>
+      </div>
+      <div class="department" alt=""><a href="dashboard.html">Head of department</a></div>
+    </div>
+    </div>
+    <div class="dropdown">
+      <span>>></span>
+      <div class="dropdown-content">
+        <a href="dashboard.html">个人资料</a>
+        <a href="dashboard.html">个人空间</a>
+        <a href="dashboard.html">修改密码</a>
+        <a href="dashboard.html">退出</a>
+      </div>
+    </div>
+  </section>
+  <div style="display: flex;
+    justify-content: center;
+    align-items: center">
+    <h1 style="color:#848B90">Patient</h1>
+  </div>
+  <br>
+  <div id="app">
+    <el-table
+      :data="tableData.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()) || data.address.toLowerCase().includes(search.toLowerCase()))"
+      style="width: 100%">
+      <el-table-column label="序号" prop="number">
+      </el-table-column>
+      <el-table-column label="入院时间" prop="date">
+      </el-table-column>
+      <el-table-column label="姓名" prop="name">
+      </el-table-column>
+      <el-table-column label="性别" prop="sex">
+      </el-table-column>
+      <el-table-column label="年龄" prop="age">
+      </el-table-column>
+      <el-table-column label="家庭住址" prop="address">
+      </el-table-column>
+      <el-table-column label="健康状况" prop="ishealthy">
+      </el-table-column>
+      <el-table-column label="出生日期" prop="birthday">
+      </el-table-column>
+      <el-table-column align="right">
+        <template slot="header" slot-scope="scope">
+          <el-input v-model="search" size="mini" placeholder="输入关键字搜索" />
+        </template>
+        <template slot-scope="scope">
+          <a href="./AAA.html">
+            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">详情</el-button>
+          </a>
+          <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    <el-pagination background layout="prev, pager, next" :total="10">
+    </el-pagination>
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          tableData: [{
+            number: '1',
+            date: '2016-05-02',
+            name: '王一虎',
+            sex: '男',
+            age: '69',
+            address: '上海市',
+            ishealthy: '良好',
+            birthday: '1977-02-02'
+          }, {
+            number: '2',
+            date: '2016-05-12',
+            name: '张伟',
+            sex: '男',
+            age: '89',
+            address: '上海市',
+            ishealthy: '良好',
+            birthday: '1977-02-02'
+          }, {
+            number: '3',
+            date: '2016-05-22',
+            name: '李子润',
+            sex: '男',
+            age: '55',
+            address: '上海市',
+            ishealthy: '良好',
+            birthday: '1986-02-02'
+          }, {
+            number: '4',
+            date: '2016-05-01',
+            name: '张梅',
+            sex: '女',
+            age: '89',
+            address: '上海市',
+            ishealthy: '较差',
+            birthday: '1948-02-02'
+          }, {
+            number: '5',
+            date: '2016-04-12',
+            name: '李慧',
+            sex: '女',
+            age: '73',
+            address: '上海市',
+            ishealthy: '较差',
+            birthday: '1958-02-02'
+          }, {
+            number: '6',
+            date: '2016-05-21',
+            name: '方德丰',
+            sex: '男',
+            age: '59',
+            address: '上海市',
+            ishealthy: '良好',
+            birthday: '1967-02-02'
+          }, {
+            number: '7',
+            date: '2016-05-20',
+            name: '李澄夕',
+            sex: '女',
+            age: '69',
+            address: '上海市',
+            ishealthy: '良好',
+            birthday: '1957-02-02'
+          },
+          ],
+
+          search: ''
+        }
+      },
+      methods: {
+        handleEdit(index, row) {
+          console.log('ggg');
+        },
+        handleDelete(index, row) {
+          console.log(index, row);
+        }
+      },
+    })
+
+  </script>
+
+</body>
+
+</html>
