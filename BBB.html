@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brain</title>
+  <link rel="shortcut icon" href="/head.ico" />
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<script src="./js/script.js"></script>
+
+<body>
+  <!-- 头部模块 -->
+  <section class="header wrapper">
+    <div class="fl logo">
+      <h1>
+        <a href="dashboard.html">软件标题名字</a>
+      </h1>
+    </div>
+    <div class="nav">
+      <div>
+        <ul>
+          <!-- <li>
+              <a href="MainPage.html">
+                <img src="./images/dashboard.png" />
+                <ul class="fr">
+                  Main
+                </ul>
+              </a>
+            </li> -->
+          <li>
+            <a href="dashboard.html">
+              <img src="./images/dashboard.png" />
+              <ul class="fr">
+                Dashboard
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="patient.html">
+              <img src="./images/patients.png" />
+              <ul class="fr">
+                Patient
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="message.html">
+              <img src="./images/message.png" />
+              <ul class="fr">
+                Message
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="dataset.html">
+              <img src="./images/message.png" />
+              <ul class="fr">
+                DataSet
+              </ul>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- search -->
+    <div class="search">
+      <input type="search" class="input" name="" id="" />
+      <!-- <button class="button">Search</button> -->
+    </div>
+    <div>
+      <div class="photo">
+        <a href="dashboard.html">
+          <h1>photo</h1>
+        </a>
+      </div>
+      <div class="name">
+        <h1 class="nameh"><a href="dashboard.html">Doctor's Name</a></h1>
+      </div>
+      <div class="department" alt="">
+        <a href="dashboard.html">Doctor's Department</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <span>>></span>
+      <div class="dropdown-content">
+        <a href="dashboard.html">个人资料</a>
+        <a href="dashboard.html">个人空间</a>
+        <a href="dashboard.html">修改密码</a>
+        <a href="dashboard.html">退出</a>
+      </div>
+    </div>
+  </section>
+  <!--- Sidemenu -->
+  <!-- Left Menu Start -->
+  <div class="container">
+    <div class="mainframe-wrapper">
+      <!-- <li class="left">
+                <a href="dashboard.html">
+                    <img src="./images/dashboard.png">
+                    <ul class="fr">Dashboard</ul>
+                </a>
+            </li>
+            <li class="left">
+                <a href="patient.html">
+                    <img src="./images/patients.png">
+                    <ul class="fr">Patient</ul>
+                </a>
+            </li>
+            <li class="left">
+                <a href="message.html">
+                    <img src="./images/message.png">
+                    <ul class="fr">Message</ul>
+                </a>
+            </li> -->
+    </div>
+    <!-- Patients -->
+
+    <div class="card">
+      <div class="card_title">
+        <h1>Patients</h1>
+      </div>
+      <div class="title">
+        <button class="back" onclick="location.href='patient.html' ">
+          Back
+        </button>
+        <button class="diagnose" id="diagnose">Diagnose</button>
+        <div class="toggles">
+          <div class="toggle-border">
+            <input type="checkbox" id="one" class="customcheckbox" name="dia" checked />
+            <label class="label1" for="one">
+              <div class="handle"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <script>
+        // 获取按钮和复选框元素
+        const diagnoseBtn = document.getElementById("diagnose");
+        const checkbox = document.getElementsByName("dia");
+        const label1 = document.querySelector(".label1");
+        const handle = document.querySelector(".handle");
+        diagnoseBtn.addEventListener("click", function () {
+          // 切换复选框的选中状态
+          checkbox.checked = !checkbox.checked;
+          // 设置样式
+          if (checkbox.checked) {
+            label1.style.backgroundColor = "#13d162";
+            handle.style.left = "-3px";
+          } else {
+            label1.style.backgroundColor = "#d13613";
+            handle.style.left = "calc(100% - 40px + 3px)";
+          }
+        });
+      </script>
+      <div class="card-content">
+        <div class="patient-list">
+          <h1>Information</h1>
+          <section id="update">
+            <form method="#">
+              <table>
+                <tr>
+                  <td class="in_left1">
+                    <p>Name: Zhang San</p>
+                  </td>
+                  <td class="in_right1">
+                    <p>Time: one year</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="in_left1">
+                    <p>Age: 12</p>
+                  </td>
+                  <td class="in_right1">
+                    <p>medical record: Some Mental illness</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="in_left1">
+                    <label for="symptom">Symptom</label>
+                  </td>
+                  <td class="in_right1">
+                    <input type="text" name="symptom" id="symptom" placeholder="normal" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="submit" id="save" onclick="saveButton()">
+                      Save
+                    </button>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--隐藏finalresult-->
+
+  <!-- 弹窗 -->
+  <div id="myModal3" class="modal">
+    <!-- Modal content -->
+    <div id="modal-content3" class="modal-content">
+      <span class="close1">&times;</span>
+      <br />
+      <div id="club-introduction3">
+        <h3>Final Result</h3>
+        <br />
+        <h4 id="Seizures">Seizures are absent</h4>
+        <style>
+          .image-container {
+            display: inline-block;
+            margin-right: 0px;
+          }
+
+          #Seizures {
+            color: yellowgreen;
+          }
+        </style>
+        <form action="#" class="formimage">
+          <br />
+          <!-- <label for="vehicle1"> Probability of onset: </label> -->
+          <br />
+          <div class="image-container">
+            <img src="./images/data.svg" width="700" height="458" id="mainImage" />
+
+            <!-- <img src="./images/feature.svg" width="700" height="458" /> -->
+          </div>
+          <!-- <div image-container>
+              <img src="./images/feature.svg" width="330" height="67" />
+            </div> -->
+          <div class="image-container"></div>
+          <br />
+        </form>
+
+        <button id="CloseButton">OK</button>
+        <button id="changeImageBtn">Next</button>
+        <!-- <button id="previousButton">Previous</button>
+          <button id="changeContentButton">Finish</button> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    // 获取按钮和图像元素
+    const changeImageBtn = document.getElementById("changeImageBtn");
+    const mainImage = document.getElementById("mainImage");
+
+    // 定义一个函数，当按钮被点击时调用
+    function changeImage() {
+      // 在这里替换图像的src属性为新图片的路径
+      mainImage.src = "./images/feature.svg"; // 这里是新图片的路径
+    }
+
+    // 将函数绑定到按钮的点击事件上
+    changeImageBtn.addEventListener("click", changeImage);
+  </script>
+  <script>
+    function showModal3() {
+      const modal = document.getElementById("myModal3");
+      modal.style.display = "block";
+    }
+
+    // Event listener for the second "Dashboard" link
+    const secondDashboardLink3 = document.querySelector(".diagnose");
+    secondDashboardLink3.addEventListener("click", function (event) {
+      event.preventDefault();
+      showModal3();
+    });
+
+    // Close the modal when the "x" button is clicked
+    const closeModalButton3 = document.querySelector(".close1");
+    closeModalButton3.addEventListener("click", function () {
+      const modal = document.getElementById("myModal3");
+      modal.style.display = "none";
+    });
+
+    // Close the modal when clicking outside the modal content
+    window.addEventListener("click", function (event) {
+      const modal = document.getElementById("myModal3");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+    const closeb = document.getElementById("CloseButton");
+    closeb.addEventListener("click", function () {
+      const modal = document.getElementById("myModal3");
+      modal.style.display = "none";
+    });
+  </script>
+</body>
+
+</html>
