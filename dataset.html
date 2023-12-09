@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain</title>
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+    <link rel="shortcut icon" href="/head.ico" />
+    <link rel="stylesheet" href="css/common.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha384-oDxVLzB5HYkR10H5HIKExJfPr6pK9oVvtEQMcb5/yn7v43Br2eK7BtXn1gHS7QZS"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="css/dataset.css" />
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 头部模块 -->
+    <section class="header wrapper">
+      <div class="fl logo">
+        <h1>
+          <a href="dashboard.html">软件标题名字</a>
+        </h1>
+      </div>
+      <div class="nav">
+        <div>
+          <ul>
+            <li>
+              <a href="dashboard.html">
+                <img src="./images/dashboard.png" />
+                <ul class="fr">
+                  Dashboard
+                </ul>
+              </a>
+            </li>
+            <li>
+              <a href="patient.html">
+                <img src="./images/patients.png" />
+                <ul class="fr">
+                  Patient
+                </ul>
+              </a>
+            </li>
+            <li>
+              <a href="message.html">
+                <img src="./images/message.png" />
+                <ul class="fr">
+                  Message
+                </ul>
+              </a>
+            </li>
+            <li>
+              <a href="dataset.html">
+                <img src="./images/message.png" />
+                <ul class="fr">
+                  DataSet
+                </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="photo">
+          <a href="dashboard.html"> </a>
+        </div>
+        <div class="name">
+          <h1 class="nameh"><a href="dashboard.html">Doctor Li</a></h1>
+        </div>
+        <div class="department" alt="">
+          <a href="dashboard.html">Head of department</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <span>>></span>
+        <div class="dropdown-content">
+          <a href="dashboard.html">Personal Data</a>
+          <a href="dashboard.html">Personal Space</a>
+          <a href="dashboard.html">Change Password</a>
+          <a href="index.html">Quit</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="datamain">
+      <br />
+      <div class="backgroundof-dataset">
+        <!-- <span class="close2">&times;</span> -->
+        <div style="text-align: center; background-color: #708ae2">
+          <h3>Import The parameter Set</h3>
+        </div>
+        <br />
+        <div>
+          <form>
+            <input type="checkbox" checked />
+            <label> Epileptic EEG dataset, University of Bonn, Germany </label
+            ><br />
+          </form>
+        </div>
+        <br />
+        <div style="text-align: center; background-color: #708ae2">
+          <h3>The Imformation of The Data Set</h3>
+        </div>
+        <br />
+        <div>
+          <form class="baise" style="background-color: white">
+            <label> The number of samples for data collection : 500</label
+            ><br />
+            <label> Sample duration : </label><label> 23.6 s</label><br />
+            <label> Sample rate : </label><label> 173.61 HZ</label><br />
+          </form>
+        </div>
+
+        <br />
+        <div style="text-align: center; margin-top: 100px">
+          <button class="buttondata" id="confirmdataset">confirm</button>
+          <button class="buttondata" id="canceldataset">cancel</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

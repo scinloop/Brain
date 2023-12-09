@@ -1,0 +1,60 @@
+<!-- Patients -->
+<!-- <div class="container"> -->
+<!-- <div class="card">
+        <div class="card_title">
+          <h1>Patients</h1>
+        </div>
+        <div class="title">
+          <button class="back" onclick="location.href='patient.html' ">
+            Back
+          </button>
+          <button class="diagnose" id="diagnose">Diagnose</button>
+          <div class="toggles">
+            <div class="toggle-border">
+              <input
+                type="checkbox"
+                id="one"
+                class="customcheckbox"
+                name="dia"
+                checked
+              />
+              <label class="label1" for="one">
+                <div class="handle"></div>
+              </label>
+            </div>
+          </div>
+        </div> -->
+
+<!-- <script>
+          // 获取按钮和复选框元素
+          diagnoseBtn = document.getElementById("diagnose");
+          checkbox = document.getElementsByName("dia");
+          label1 = document.querySelector(".label1");
+          handle = document.querySelector(".handle");
+          diagnoseBtn.addEventListener("click", function () {
+            // 切换复选框的选中状态
+            //checkbox.checked = !checkbox.checked;
+            // 设置样式
+            // 使用fetch来请求后端API
+            fetch("http://127.0.0.1:5000/1") // 将URL替换为实际的后端API地址
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error("Network response was not ok");
+                }
+                return response.json();
+              })
+              .then((data) => {
+                checkbox.checked = data.isTrue;
+              })
+              .catch((error) => {
+                console.error("Fetch error:", error);
+              });
+            if (!checkbox.checked) {
+              label1.style.backgroundColor = "#13d162"; //绿色
+              handle.style.left = "-3px";
+            } else {
+              label1.style.backgroundColor = "#d13613"; //红色
+              handle.style.left = "calc(100% - 40px + 3px)";
+            }
+          });
+        </script> -->

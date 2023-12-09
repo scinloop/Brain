@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain</title>
+    <link rel="shortcut icon" href="/head.ico" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/panel.css">
+
+    <!-- 网络 -->
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="./js/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <!-- 头部模块 -->
+    <section class="header wrapper">
+        <div class="fl logo">
+            <h1>
+                <a href="dashboard.html">软件标题名字</a>
+            </h1>
+        </div>
+        <div class="nav">
+            <div>
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <img src="./images/dashboard.png">
+                            <ul class="fr">Dashboard</ul>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="dashboard.html" class="dashboard-link">
+                            <img src="./images/dashboard.png">
+                            <ul class="fr">Method Selection</ul>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="patient.html">
+                            <img src="./images/patients.png">
+                            <ul class="fr">Patient</ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="message.html">
+                            <img src="./images/message.png">
+                            <ul class="fr">Message</ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dataset.html">
+                            <img src="./images/message.png">
+                            <ul class="fr">DataSet</ul>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="app" style="padding-left: 40px; padding-top: 10px;">
+                <el-button @click="openDialog" style="font-weight: 600;">Method Selection</el-button>
+                <el-dialog :title="thistitle" :visible.sync="dialogVisible" width="80%" :before-close="handleClose">
+                    <el-card class="box-card" shadow="hover" v-if="showFirstPicture">
+                        <div class="tanchuang">
+                            <div id="main" style="width: 1000px; height: 300px;"></div>
+                        </div class="tanchuang">
+                        <div id="main1" style="width: 1000px; height: 300px; padding-left: 80px;" v-if="div2"></div>
+                        <span style="display:flex;
+                        justify-content: center;">
+                            <el-pagination @current-change="handlePageChange" background layout="prev, pager, next"
+                                :total="40" v-if="showyema">
+                            </el-pagination>
+                        </span>
+                    </el-card>
+
+
+                    <div class="mselection">
+                        <el-checkbox v-model="checked1" :label=label1 border v-if="showCheck1"></el-checkbox>
+                        <el-checkbox v-model="checked2" :label=label2 border v-if="showCheck2"></el-checkbox>
+                        <el-checkbox v-model="checked3" :label=label3 border v-if="showCheck3"></el-checkbox>
+                        <el-checkbox v-model="checked4" :label=label4 border v-if="showCheck4"></el-checkbox>
+                    </div>
+                    <span slot="footer" class="dialog-footer">
+                        <el-button type="danger" @click="closeDialog" icon="el-icon-delete" v-if="showCancel">取 消
+                        </el-button>
+                        <el-button type="warning" @click="nextpage" icon="el-icon-s-tools" v-if="showSkip">跳过
+                        </el-button>
+                        <el-button type="primary" @click="run" icon="el-icon-s-tools" v-if="showRun">运 行
+                        </el-button>
+                        <el-button type="primary" @click="lastpage" icon="el-icon-back" v-if="showLastone">上一个
+                        </el-button>
+                        <el-button type="primary" @click="nextpage" icon="el-icon-right" v-if="showNextone">下一个
+                        </el-button>
+                        <el-button type="success" @click="closeDialog" icon="el-icon-success" v-if="showSure">确 定
+                        </el-button>
+                    </span>
+                </el-dialog>
+            </div>
+        </div>
+
+
+        <!-- search -->
+        <!-- <div class="search">
+            <input type="search" class="input" name="" id="">
+        </div> -->
+        <div>
+            <div class="photo">
+                <a href="dashboard.html">
+                    <h1>photo
+                    </h1>
+                </a>
+            </div>
+            <div class="name">
+                <h1 class="nameh"><a href="dashboard.html">Doctor Li</a></h1>
+            </div>
+            <div class="department" alt=""><a href="dashboard.html">Head of department</a></div>
+        </div>
+        <div class="dropdown">
+            <span>>></span>
+            <div class="dropdown-content">
+                <a href="dashboard.html">Personal Data</a>
+                <a href="dashboard.html">Personal Space</a>
+                <a href="dashboard.html">Change Password</a>
+                <a href="index.html">Quit</a>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="chart">
+        <div class="chart-content">
+            <div class="grid-container">
+                <div id="first" class="grid-item"><img src="./images/brainmap.png" alt="" width="340px" height="340px">
+                </div>
+                <div id="second" class="grid-item">Box 2</div>
+                <div id="third" class="grid-item">Box 3</div>
+                <div id="forth" class="grid-item">Box 4</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/MyCharts.js"></script>
+    <script src="./js/model.js"></script>
+    <script src="./js/vuejs/dialog.js"></script>
+    <style scoped>
+        .el-dialog__header {
+            text-align: center;
+            /* 水平居中 */
+        }
+
+        .el-dialog__title {
+            line-height: 24px;
+            font-size: 30px;
+            color: #303133;
+        }
+
+        .tanchuang {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .mselection {
+            margin-top: 20px;
+            justify-content: center;
+            display: flex;
+        }
+    </style>
+</body>
+
+</html>

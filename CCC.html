@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain</title>
+    <link rel="shortcut icon" href="/head.ico" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<script src="./js/script.js"></script>
+
+<body>
+    <section class="shortcut wrapper"> </section>
+    <!-- 头部模块 -->
+    <section class="header wrapper">
+        <div class="fl logo">
+            <h1>
+                <a href="dashboard.html">软件标题名字</a>
+            </h1>
+        </div>
+        <div class="nav">
+            <div>
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <img src="./images/dashboard.png" >
+                        <ul class="fr">Dashboard</ul>
+                    </a>
+                </li>
+                <li >
+                    <a href="dashboard.html"  class="dashboard-link">
+                        <img src="./images/dashboard.png">
+                        <ul class="fr">Method Selection</ul>
+                    </a>
+                </li>
+                <li >
+                    <a href="patient.html">
+                        <img src="./images/patients.png">
+                        <ul class="fr">Patient</ul>
+                    </a>
+                </li>
+                <li >
+                    <a href="message.html">
+                        <img src="./images/message.png">
+                        <ul class="fr">Message</ul>
+                    </a>
+                </li>
+
+            </ul>
+            </div>
+        </div>
+
+
+        <!-- search -->
+        <div class="search">
+            <input type="search" class="input" name="" id="">
+            <!-- <button class="button">Search</button> -->
+        </div>
+        <div>
+            <div class="photo">
+                <a href="dashboard.html">
+                    <h1>photo
+                    </h1>
+                </a>
+            </div>
+            <div class="name">
+                <h1 class="nameh"><a href="dashboard.html">Doctor's Name</a></h1>
+            </div>
+            <div class="department" alt=""><a href="dashboard.html">Doctor's Department</a></div>
+        </div>
+        <div class="dropdown">
+            <span>>></span>
+            <div class="dropdown-content">
+                <a href="dashboard.html">个人资料</a>
+                <a href="dashboard.html">个人空间</a>
+                <a href="dashboard.html">修改密码</a>
+                <a href="dashboard.html">退出</a>
+            </div>
+        </div>
+    </section>
+
+    <!--- Sidemenu -->
+    <!-- Left Menu Start -->
+    <div class="container">
+        <div class="mainframe-wrapper">
+            <!-- <li class="left">
+                <a href="dashboard.html">
+                    <img src="./images/dashboard.png">
+                    <ul class="fr">Dashboard</ul>
+                </a>
+            </li>
+            <li class="left">
+                <a href="patient.html">
+                    <img src="./images/patients.png">
+                    <ul class="fr">Patient</ul>
+                </a>
+            </li>
+            <li class="left">
+                <a href="message.html">
+                    <img src="./images/message.png">
+                    <ul class="fr">Message</ul>
+                </a>
+            </li> -->
+        </div>
+        <!-- Patients -->
+
+        <div class="card">
+            <div class="card_title">
+                <h1>Patients</h1>
+            </div>
+            <div class="title">
+                <button class="back" onclick="location.href='patient.html' ">Back</button>
+                <div class="toggles">
+                    <div class="toggle-border">
+                        <input type="checkbox" id="one" class="customcheckbox"/>
+                        <label class="label1" for="one">
+                            <div class="handle"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-content">
+                <div class="patient-list">
+                    <h1>Information</h1>
+                    <section id="update">
+                        <form method="#">
+                            <table>
+                                <tr>
+                                    <td class="in_left1">
+                                        <p>Name: 张三</p>
+                                    </td>
+                                    <td class="in_right1">
+                                        <p>Time: one year</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="in_left1">
+                                        <p>Age: 12</p>
+                                    </td>
+                                    <td class="in_right1">
+                                        <p>medical record: Some Mental illness</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="in_left1"><label for="symptom">Symptom</label></td>
+                                    <td class="in_right1"><input type="text" name="symptom" id="symptom" placeholder="normal"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="submit" id="save" onclick="saveButton()">Save</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
